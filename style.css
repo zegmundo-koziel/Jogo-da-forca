@@ -9,6 +9,10 @@ header img {
 }
 a{
 	cursor: pointer;
+
+}
+img:hover{
+	transform: scale(1.1);
 }
 div{
 	display:inline-block;
@@ -54,5 +58,11 @@ footer {
 	padding: 20px 40px;
 }
 footer img {
-	width: 4%
+	margin: 40px 10px 0;
+	width: 2%;
+
+}
+.copyright {
+	font-size: 13px;
+	margin: 20px 0 0;
 }
