@@ -1,0 +1,112 @@
+<canvas width="600" height="400"></canvas>
+
+
+
+<script>
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+
+
+	pincel.strokeStyle='darkblue';
+	pincel.fillStyle='darkblue';
+	pincel.beginPath();
+	
+
+
+
+	function desenhaBase(){
+	pincel.moveTo(200,200);
+	pincel.lineTo(400,200);
+	pincel.stroke();
+	}
+
+	function desenhaForca(){
+		pincel.moveTo(250,200);
+		pincel.lineTo(250,50);
+		pincel.lineTo(325,50);
+		pincel.lineTo(325,70);
+		pincel.stroke();
+	}
+
+	function desenhaCabeca(){
+		pincel.moveTo(340,85);
+		pincel.arc(325, 85, 15, 0, 2 * 3.14);
+	    pincel.stroke();
+	}
+
+    function desenhaCorpo(){
+        pincel.moveTo(325,100);
+        pincel.lineTo(325,150);
+        pincel.stroke();
+    }
+
+    function desenhaBracoD(){
+        //DESENHA BREÇO ESQUERDO
+       	pincel.moveTo(325,110);
+       	pincel.lineTo(310,125);
+      	pincel.stroke();
+    }
+
+    function desenhaBracoE(){
+        pincel.moveTo(325,110);
+        pincel.lineTo(340,125);
+        pincel.stroke();
+    }
+
+    function desenhaPernaD(){
+        pincel.moveTo(325,150);
+        pincel.lineTo(310,165);
+        pincel.stroke();
+    }
+
+    function desenhaPernaE(){
+	    pincel.moveTo(325,150);
+	    pincel.lineTo(340,165);
+	    pincel.stroke();
+	}
+
+	function cabecaEnforcada(){
+	    pincel.moveTo(350,90);
+		pincel.arc(335, 90, 15, 0, 2 * 3.14);
+		pincel.moveTo(325,80);
+		pincel.lineTo(325,70);
+	    pincel.stroke();
+	}
+
+	function linhaLetras(x){
+		var y=(x+20);
+		pincel.moveTo(x,250);
+		pincel.lineTo(y,250);
+		pincel.stroke();
+		pincel.font = "bold 25px inter"; 
+		pincel.fillText("O", x, 245);
+		
+	}
+
+
+desenhaBase();
+desenhaForca();
+desenhaCabeca();
+desenhaCorpo();
+desenhaBracoD();
+desenhaBracoE();
+desenhaPernaD();
+desenhaPernaE();
+cabecaEnforcada();
+linhaLetras(200);
+linhaLetras(240);
+linhaLetras(280);
+
+
+
+	
+
+
+</script>
+
+
+	
+
+
+
+	
