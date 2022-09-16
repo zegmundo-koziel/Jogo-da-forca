@@ -79,8 +79,25 @@
 		pincel.lineTo(y,250);
 		pincel.stroke();
 		pincel.font = "bolder 25px inter";
-		pincel.fillText(teclado(5), x, 245);	
+		pincel.fillText(str, x, 245);	
 	}
+
+
+
+	var pressed = document.getElementById('pressed');
+
+function keyPressed(evt){
+    evt = evt || window.event;
+    var key = evt.keyCode || evt.which;
+    return String.fromCharCode(key); 
+}
+
+document.onkeypress = function(evt) {
+    var str = keyPressed(evt);
+    pressed.innerHTML += str;
+};
+
+
 
 
     

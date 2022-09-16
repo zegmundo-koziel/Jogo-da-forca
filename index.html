@@ -17,11 +17,22 @@
 	<main>
 
 		
-			<div>
-			<a href="jogo.html"><button class="jogar" >Começar a jogar</button></a>
+			<div id="div-desaparece" class="botoes-home">
+
+			
+				<input class="btn-iniciar" type="submit" value="Iniciar jogo" id="iniciar-jogo" onclick="iniciarJogo()">
+				<input class="btn-palavra" type="submit" value="Nova palavra" id="iniciar-jogo" onclick="teste()">
+			
+			
 			</div>
-			<div>
-			<a href="palavras.html"><button >Adicionar nova palavra</button></a>
+
+			<div id="div-aparece-forca" class="canvas">
+				<canvas id="forca" height="860px" width="1200px"></canvas>
+			
+			</div>
+
+			<div class="sublinhado">
+			<input class="btn-palavra" type="submit" value="Nova palavra" id="iniciar-jogo" onclick="teste()">
 			</div>
 		
 
@@ -33,7 +44,9 @@
 
 		<p class="copyright">&copy; Copyright Zegmundo Koziel Jr</p>
 	</footer>
-	<script src="script.js"></script>
+	<script type="text/javascript" src="forca.js"></script>
+	<script type="text/javascript" src="canvas.js"></script>
+
 
 </body>
 </html>

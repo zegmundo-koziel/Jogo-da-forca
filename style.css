@@ -2,39 +2,38 @@ html{
 	background: #E5E5E5;
 	font-family: 'Inter', sans-serif;
 }
+body {
+	min-width: 1224px;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background: #F3F5FC;
+}
 
 header img {
 	padding: 44px 0 31.09px 48px;
-
 }
 a{
 	cursor: pointer;
-
 }
 img:hover{
 	transform: scale(1.1);
 }
-div{
-	display:inline-block;
-	padding-bottom:10px
-	width: 370px;
-	height: 105px;
-	letter-spacing: 10px;
-}
 
-button {
-	background: #E5E5E5;
-	width:332px;
-	height: 67px;
-	padding: 24px ;
-	color: #0A3871;
-	font-size: 18px;
-	border-color:#0A3871;
-	border-radius: 24px;
-	transition: 1s all;
-	cursor: pointer;
+#div-desaparece{
+	background-color: blue;
+	display: inherit;
+	}
+#div-aparece-forca{
+	background-color: orange;
+}	
+
+.sublinhado{
+	background-color: black;
+	display: inherit;
 }
-.jogar {
+input {
 	width:332px;
 	height: 67px;
 	padding: 24px;
@@ -47,7 +46,7 @@ button {
 	cursor: pointer;
 }
 
-button:hover {
+input:hover {
 	transform: scale(1.03);
 }
 
