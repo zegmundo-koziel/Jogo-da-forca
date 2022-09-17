@@ -5,16 +5,16 @@ function desenharCanvas(){
 	tabuleiro.fillStyle = "#f3f5fc";
 	tabuleiro.strokeStyle = "#0a3871";
 
-	tabuleiro.fillRect(0,0, 1200,800);
+	tabuleiro.fillRect(0,0, 1200,400);
 	tabuleiro.beginPath();
-	tabuleiro.moveTo(900,500);
-	tabuleiro.lineTo(650,500);
+	tabuleiro.moveTo(550,200);
+	tabuleiro.lineTo(850,200);
 	tabuleiro.stroke();
 	tabuleiro.closePath();
 }
 
 function desenharLinhas(){
-	tabuleiro.lineWidth = 6;
+	tabuleiro.lineWidth = 3;
 	tabuleiro.lineCap = "round";
 	tabuleiro.lineJoin = "round";
 	tabuleiro.fillStyle = "#f3f5fc";
@@ -22,8 +22,8 @@ function desenharLinhas(){
 
 	let largura = 600/palavraSecreta.length;
 	for(let i = 0; i< palavraSecreta.length; i++){
-		tabuleiro.moveTo(500+(largura*i),640);
-		tabuleiro.lineTo(550+(largura*i),640);
+		tabuleiro.moveTo(420+(largura*i),300);
+		tabuleiro.lineTo(460+(largura*i),300);
 	}
 	tabuleiro.stroke();
 	tabuleiro.closePath();

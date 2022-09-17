@@ -1,5 +1,5 @@
 html{
-	background: #E5E5E5;
+	background: #bbc9f0;
 	font-family: 'Inter', sans-serif;
 }
 body {
@@ -8,11 +8,12 @@ body {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	background: #F3F5FC;
 }
+
 
 header img {
 	padding: 44px 0 31.09px 48px;
+
 }
 a{
 	cursor: pointer;
@@ -20,40 +21,79 @@ a{
 img:hover{
 	transform: scale(1.1);
 }
-
-#div-desaparece{
-	background-color: blue;
-	display: inherit;
-	}
 #div-aparece-forca{
-	background-color: orange;
-}	
-
-.sublinhado{
-	background-color: black;
-	display: inherit;
+	background: #f3f5fc;
 }
-input {
+
+#div-desaparece,.nova-palavra { 
+	padding-left: 40%;
+	padding-right: 40%;
+	padding-top: 2%;
+	padding-bottom: 2%;	
+}
+
+.botoes-canvas{
+	padding-left: 25%;
+}
+
+
+.btn-iniciar {
 	width:332px;
-	height: 67px;
-	padding: 24px;
+	padding: 40px;
+	margin: 20px;
 	background: #0A3871;
 	color: white;
-	font-size: 18px;
+	font-size: 20px;
 	border: none;
-	border-radius: 24px;
+	border-radius: 20px;
 	transition: 1s all;
 	cursor: pointer;
 }
 
+.btn-palavra {
+	width:332px;
+	padding: 40px;
+	margin: 20px;
+	border-color: #0A3871;
+	color: #0A3871;
+	font-size: 20px;
+	border-radius: 20px;
+	transition: 1s all;
+	cursor: pointer;
+}
+
+.btn-salvar-iniciar,.btn-novo-jogo {
+	width:280px;
+	padding: 20px;
+	margin: 15px;
+	background: #0A3871;
+	color: white;
+	font-size: 15px;
+	border: none;
+	border-radius: 20px;
+	transition: 1s all;
+	cursor: pointer;
+}
+
+.btn-cancela,.btn-desistir {
+	width:280px;
+	padding: 20px;
+	margin: 15px;
+	border-color: #0A3871;
+	color: #0A3871;
+	font-size: 15px;
+	border-radius: 20px;
+	transition: 1s all;
+	cursor: pointer;
+}
 input:hover {
 	transform: scale(1.03);
 }
 
 
+
 footer {
 	text-align: center;
-	background: url("bg.jpg");
 	padding: 20px 40px;
 }
 footer img {

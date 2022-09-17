@@ -18,21 +18,27 @@
 
 		
 			<div id="div-desaparece" class="botoes-home">
-
-			
-				<input class="btn-iniciar" type="submit" value="Iniciar jogo" id="iniciar-jogo" onclick="iniciarJogo()">
-				<input class="btn-palavra" type="submit" value="Nova palavra" id="iniciar-jogo" onclick="teste()">
-			
-			
+				<input class="btn-iniciar" type="submit" value="Começar a jogar" id="iniciar-jogo" onclick="iniciarJogo()">
+				<input class="btn-palavra" type="submit" value="Adicionar nova palavra" id="iniciar-jogo" onclick="novaPalavra()">
 			</div>
-
 			<div id="div-aparece-forca" class="canvas">
-				<canvas id="forca" height="860px" width="1200px"></canvas>
-			
+				<canvas id="forca" height="400px"width="1200px"></canvas>
+				<div class="botoes-canvas">
+					<input class="btn-novo-jogo" type="submit" value="Novo jogo" id="iniciar-jogo" onclick="iniciarJogo()">
+					<input class="btn-desistir" type="submit" value="Desistir" id="iniciar-jogo" onclick="recarregar()">
+				</div>	
+			</div >	
+			<div id="caixa-nova-palavra" class="nova-palavra">
+				<textarea class="inputTexto" cols="40" rows="5" placeholder="Digite uma nova palavra"></textarea>
+				<div>
+					<input class="btn-salvar-iniciar" type="submit" value="Salvar e começar" id="iniciar-jogo" onclick="iniciarJogo(),teste()">
+					<input class="btn-cancela" type="submit" value="Cancelar" id="iniciar-jogo" onclick="recarregar()">
+				</div>
 			</div>
-
+								
+			</div>
 			<div class="sublinhado">
-			<input class="btn-palavra" type="submit" value="Nova palavra" id="iniciar-jogo" onclick="teste()">
+			
 			</div>
 		
 
