@@ -19,20 +19,20 @@
 		
 			<div id="div-desaparece" class="botoes-home">
 				<input class="btn-iniciar" type="submit" value="Começar a jogar" id="iniciar-jogo" onclick="iniciarJogo()">
-				<input class="btn-palavra" type="submit" value="Adicionar nova palavra" id="iniciar-jogo" onclick="novaPalavra()">
+				<input class="btn-palavra" type="submit" value="Adicionar nova palavra" onclick="novaPalavra()">
 			</div>
 			<div id="div-aparece-forca" class="canvas">
 				<canvas id="forca" height="400px"width="1200px"></canvas>
 				<div class="botoes-canvas">
-					<input class="btn-novo-jogo" type="submit" value="Novo jogo" id="iniciar-jogo" onclick="iniciarJogo()">
-					<input class="btn-desistir" type="submit" value="Desistir" id="iniciar-jogo" onclick="recarregar()">
+					<input class="btn-novo-jogo" type="submit" value="Novo jogo" onclick="iniciarJogo()">
+					<input class="btn-desistir" type="submit" value="Desistir" id="desistir" onclick="recarregar()">
 				</div>	
 			</div >	
 			<div id="caixa-nova-palavra" class="nova-palavra">
-				<textarea class="inputTexto" cols="40" rows="5" placeholder="Digite uma nova palavra"></textarea>
+				<textarea id="input-nova-palavra" class="inputTexto" cols="40" rows="5" placeholder="Digite uma nova palavra"></textarea>
 				<div>
-					<input class="btn-salvar-iniciar" type="submit" value="Salvar e começar" id="iniciar-jogo" onclick="iniciarJogo(),teste()">
-					<input class="btn-cancela" type="submit" value="Cancelar" id="iniciar-jogo" onclick="recarregar()">
+					<input class="btn-salvar-iniciar" type="submit" value="Salvar e começar" id="salvar-iniciar" onclick="addNovaPalavra()">
+					<input class="btn-cancela" type="submit" value="Cancelar" id="cancelar" onclick="recarregar()">
 				</div>
 			</div>
 								
@@ -52,8 +52,7 @@
 	</footer>
 	<script type="text/javascript" src="forca.js"></script>
 	<script type="text/javascript" src="canvas.js"></script>
-
-
+	
 </body>
 </html>
 
