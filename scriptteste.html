@@ -100,6 +100,22 @@ document.onkeypress = function(evt) {
 
 
 
+  pincel.font='100px arial';
+  pincel.lineWidth=4;
+
+  //Primeiro Q, preenchido de azul
+     pincel.fillStyle='blue';
+  pincel.fillText('J',50,150);
+
+  //Segundo Q, com stroke (traço) verde
+  pincel.strokeStyle='green'
+  pincel.strokeText('J',125,150);
+
+  //Unindo os dois
+  pincel.fillText('J',200,150); 
+  pincel.strokeText('J',200,150);
+
+
     
 
 
