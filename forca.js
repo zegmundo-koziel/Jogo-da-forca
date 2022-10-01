@@ -6,6 +6,7 @@ let novaPalavraSecreta = document.getElementById('salvar-iniciar');
 let inputPalavra = document.querySelector("#input-nova-palavra");
 let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 let letras = [];
+let teclaAcionada = "";
 let erros = 8;
 
 
@@ -31,7 +32,130 @@ function escolherPalavraSecreta(){
 	palavraSecreta = palavra;
 	console.log(palavraSecreta);
 	
-	}
+}
+
+function teclaClicada(e){
+	teclaAcionada = e.key.toUpperCase();
+	if(letras.includes(teclaAcionada)){
+		console.log (teclaAcionada)
+		return teclaAcionada
+	} 
+		else if(alphabet.includes(teclaAcionada) ){
+				letras.push(teclaAcionada)
+				console.log(letras)
+				return teclaAcionada
+				
+			}
+}	
+
+
+function adcionarletraIncorreta(){
+	erros -= 1;
+	if(erros == 7){
+		desenhaForca();
+		} 
+	if(erros == 6){ 
+		desenhaCabeca()
+		}
+	if(erros == 5){ 
+		desenhaCorpo()
+		}	
+	if(erros == 4){ 
+		desenhaBracoD()
+		}
+	if(erros == 3){ 
+		desenhaBracoE()
+		}		
+	if(erros == 2){ 
+		desenhaPernaD()
+		}
+	if(erros == 1){ 
+		desenhaPernaE()
+		}
+	if(erros == 0){ 
+		cabecaEnforcada()
+		} 
+			
+	console.log(erros)
+}
+
+function novaPalavra() {
+	document.getElementById('div-desaparece').style.display = "none";
+	document.getElementById('caixa-nova-palavra').style.display = "block";
+}
+
+function recarregar(){
+	document.getElementById('div-aparece-forca').style.display = "none";
+	document.getElementById('caixa-nova-palavra').style.display = "none";
+	document.getElementById('div-desaparece').style.display = "block";
+	document.onkeydown = 'none';
+	
+}
+
+function iniciarJogo(){
+	document.getElementById('div-desaparece').style.display = "none";
+	document.getElementById('caixa-nova-palavra').style.display = "none";
+	document.getElementById('div-aparece-forca').style.display = "block";
+	letras = []
+	erros = 8;
+	acertos = []
+	escolherPalavraSecreta();
+	desenharCanvas();
+	desenharLinhas();
+	
+	
+	
+	
+	
+	
+	
+	
+	//desenhaPernaD()
+	//desenhaPernaE()
+	//cabecaEnforcada()
+	
+	//desenhaLetras();
+	document.onkeydown = teclaClicada1;
+
+}
+
+function teclaClicada1(e){
+	teclaAcionada = e.key.toUpperCase();
+	if(letras.includes(teclaAcionada)){
+		console.log (teclaAcionada, "if")
+		return teclaAcionada
+	} 
+		if(alphabet.includes(teclaAcionada) && palavraSecreta.includes(teclaAcionada) ){
+					letras.push(teclaAcionada);
+					var frase = palavraSecreta;
+					var letra = teclaAcionada;
+					var quantidade = 0
+
+						for (var i = 0; i < frase.length; i++) {
+  						if (frase[i] == letra) {
+    							quantidade++
+  							}
+						}
+						if(quantidade == 1){
+							acertos ++
+						} else{ acertos = quantidade + acertos}
+
+						if (acertos == palavraSecreta.length){
+							winner ()
+						}
+					
+					console.log(letras, acertos, quantidade, palavraSecreta.length)
+			return teclaAcionada;
+		}
+			else if(alphabet.includes(teclaAcionada)){
+					letras.push(teclaAcionada)
+					console.log(letras)
+					adcionarletraIncorreta(teclaAcionada);
+					escreverLetraIncorreta(teclaAcionada, erros);				
+			}
+
+}
+
 
 //veirfica se é letra ou numero
 /*
@@ -53,45 +177,14 @@ function verificarLetra(key){
 					
 }
 	
-*/
-
-function adcionarletraIncorreta(){
-	erros -= 1;
-	console.log(erros)
-}
-
-function iniciarJogo(){
-	
-	document.getElementById('div-desaparece').style.display = "none";
-	document.getElementById('caixa-nova-palavra').style.display = "none";
-	document.getElementById('div-aparece-forca').style.display = "block";
-	escolherPalavraSecreta();
-	desenharCanvas();
-	desenharLinhas();
-	//desenhaLetras();
-	document.onkeydown = teclaClicada;
-	
-}
-
-function teclaClicada(e){
-	let teclaAcionada = e.key.toUpperCase();
-	if(letras.includes(teclaAcionada)){
-		} 
-		else if(alphabet.includes(teclaAcionada) ){
-				letras.push(teclaAcionada)
-				console.log(letras)
-			}
-}
-	
-	
-	
+*/	
 	
 
 
 
-	//letrasClicadas = [];
-/*	document.onkeydown = (e) => {
-		let letra = e.key.toUpperCase();
+
+
+/*
 
 		if(verificarLetra(letra)  && palavraSecreta.includes(letras)){
 			for(let i = 0; i < palavraSecreta.length; i++ ){
@@ -112,70 +205,13 @@ function teclaClicada(e){
 	*/
 
 
-function novaPalavra() {
-	document.getElementById('div-desaparece').style.display = "none";
-	document.getElementById('caixa-nova-palavra').style.display = "block";
-}
 
-function recarregar(){
-	document.getElementById('div-aparece-forca').style.display = "none";
-	document.getElementById('caixa-nova-palavra').style.display = "none";
-	document.getElementById('div-desaparece').style.display = "block";
-	document.onkeydown = 'none';
-}
+
+		   
+
+
+
+
+
 
 recarregar();
-
-
-
-
-
-
-
-
-/*
-
-function verificarLetra(key){
-	let estado = false;
-	if(key >= 65 && letras.indexOf(key) || key <= 90 && letras.indexOf(key)){
-		return estado;
-		} 
-		else if (letras.includes(key)) {	
-			letras.push(key);
-			
-		} else {
-			estado = true;
-			console.log(letras)
-				return estado;
-
-			
-			}
-
-
-
-
-
-if (ignorarTeclas.includes(event.key)){
-}
-	else if (letrasClicadas.includes(event.key.toUpperCase())){
-	} 
-		else{
-		letrasClicadas.push(event.key.toUpperCase());
-		console.log(letrasClicadas);
-		   }
-		   
-console.log(palavraSecreta.indexOf(teclasAcionada) != -1); 
-
-
-*/		
-   
-
-
-
-
-
-
-function teste(){
-	console.log("clicou");		
-
-}

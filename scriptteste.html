@@ -33,6 +33,19 @@
 		pincel.arc(325, 85, 15, 0, 2 * 3.14);
 	    pincel.stroke();
 	}
+	function cabecaEnforcada(){
+
+		//pincel.moveTo(325,50);
+        pincel.fillRect(325,50, 30, 30);
+        
+       
+
+	    pincel.moveTo(350,90);
+		pincel.arc(335, 90, 15, 0, 2 * 3.14);
+		pincel.moveTo(325,80);
+		pincel.lineTo(325,70);
+	    pincel.stroke();
+	}
 
     function desenhaCorpo(){
         pincel.moveTo(325,100);
@@ -65,13 +78,7 @@
 	    pincel.stroke();
 	}
 
-	function cabecaEnforcada(){
-	    pincel.moveTo(350,90);
-		pincel.arc(335, 90, 15, 0, 2 * 3.14);
-		pincel.moveTo(325,80);
-		pincel.lineTo(325,70);
-	    pincel.stroke();
-	}
+	
 
 	function linhaLetras(x){
 		var y=(x+20);
