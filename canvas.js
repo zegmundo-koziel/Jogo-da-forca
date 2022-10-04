@@ -97,9 +97,23 @@ function escreverLetraIncorreta(teclaAcionada, erros){
 	}
 
 	function cabecaEnforcada(){
+		
+		tabuleiro.strokeStyle = "#f3f5fc";
+        tabuleiro.beginPath();
+		tabuleiro.lineWidth = 8;
+		tabuleiro.moveTo(767,65);
+		tabuleiro.arc(750, 67, 17, 0, 2 * 3.14);
+	   	tabuleiro.stroke();
+
+		tabuleiro.fillStyle = "#f3f5fc";
+		tabuleiro.strokeStyle = "#0a3871";
+        tabuleiro.beginPath();
+		tabuleiro.lineWidth = 6;
+
+
 		tabuleiro.moveTo(776,64);
 		tabuleiro.arc(760, 70, 17, 0, 2 * 3.14);
-		tabuleiro.moveTo(750,50);
+		tabuleiro.moveTo(750,47);
 		tabuleiro.lineTo(750,53);
 		tabuleiro.stroke()
 
@@ -116,6 +130,7 @@ function escreverLetraIncorreta(teclaAcionada, erros){
   		tabuleiro.fillText('A palavra era:',820, 140);
 		tabuleiro.font='30px arial';
 		tabuleiro.fillText(palavraSecreta,820, 180); 
+		
 	}
 
 	function winner (){

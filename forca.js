@@ -63,6 +63,7 @@ function adcionarletraIncorreta(){
 		}
 	if(erros == 0){ 
 		cabecaEnforcada()
+		resultado = "PERDEU!!!"
 	}
 				
 	console.log(erros)
@@ -92,18 +93,19 @@ function iniciarJogo(){
 	escolherPalavraSecreta();
 	desenharCanvas();
 	desenharLinhas();
+	resultado = "";
 	
+	document.onkeydown = teclaClicada
 	
-	
-	
-	document.onkeydown = teclaClicada, verificaFimDeJogo
-
 }
 
 function teclaClicada(e){
 	teclaAcionada = e.key.toUpperCase();
+	verificaFimDeJogo()
 	if(letras.includes(teclaAcionada)){
 		console.log (teclaAcionada, "if")
+		
+
 		return teclaAcionada
 	} 
 		if(alphabet.includes(teclaAcionada) && palavraSecreta.includes(teclaAcionada) ){
@@ -125,7 +127,8 @@ function teclaClicada(e){
 						if (acertos == palavraSecreta.length){
 							
 							winner ()
-							resultado = "winner"
+							resultado = "VENCEU!!!"
+							
 						}
 					
 					console.log(letras, acertos, palavraSecreta.length)
@@ -140,14 +143,15 @@ function teclaClicada(e){
 
 }
 
-function verificaFimDeJogo(e) {
-	teclaAcionada = e.key.toUpperCase();
-	
-	if(resultado =="winner"){
+function verificaFimDeJogo(){
+	if (resultado != ""){
+		document.onkeydown = 'none';
+		teclaAcionada = ""
+		
+		alert("FIM DE JOGO VOCÊ")
 		alert(resultado)
 	}
-	
-
 }
+
 
 recarregar();
