@@ -32,13 +32,13 @@ function desenharLinhas(){
 
 }
 
-function escreverLetraCorreta(index){
+function escreverLetraCorreta(i){
 	tabuleiro.font = "bold 52px Inter";
 	tabuleiro.lineCap = "round";
 	tabuleiro.fillStyle = "#0a3871";
 	tabuleiro.lineWidth = 6;
 	let largura = 600/palavraSecreta.length;
-	tabuleiro.fillText(palavraSecreta[index],425 +(largura*i),290);
+	tabuleiro.fillText(palavraSecreta[i],425 +(largura*i),290);
 	
 
 }
