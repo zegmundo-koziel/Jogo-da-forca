@@ -35,8 +35,6 @@ function escolherPalavraSecreta(){
 }
 
 	
-
-
 function adcionarletraIncorreta(){
 	erros -= 1;
 	
@@ -64,9 +62,7 @@ function adcionarletraIncorreta(){
 	if(erros == 0){ 
 		cabecaEnforcada()
 		resultado = "PERDEU!!!"
-	}
-				
-	console.log(erros)
+	}	
 }
 
 function novaPalavra() {
@@ -78,8 +74,7 @@ function recarregar(){
 	document.getElementById('div-aparece-forca').style.display = "none";
 	document.getElementById('caixa-nova-palavra').style.display = "none";
 	document.getElementById('div-desaparece').style.display = "block";
-	document.onkeydown = 'none';
-	
+	document.onkeydown = 'none';	
 }
 
 function iniciarJogo(){
@@ -95,43 +90,33 @@ function iniciarJogo(){
 	desenharLinhas();
 	resultado = "";
 	
-	document.onkeydown = teclaClicada
-	
+	document.onkeydown = teclaClicada	
 }
 
 function teclaClicada(e){
 	teclaAcionada = e.key.toUpperCase();
 	verificaFimDeJogo()
 	if(letras.includes(teclaAcionada)){
-		console.log (teclaAcionada, "if")
-		
-
 		return teclaAcionada
 	} 
 		if(alphabet.includes(teclaAcionada) && palavraSecreta.includes(teclaAcionada) ){
 					letras.push(teclaAcionada);
-					var quantidade = 0
-					
+					var quantidade = 0	
 						for (var i = 0; i < palavraSecreta.length; i++) {
   						if (palavraSecreta[i] == teclaAcionada) {
 							escreverLetraCorreta(i)								
-								quantidade++
-								console.log(palavraSecreta.indexOf(teclaAcionada))							
+								quantidade++							
   							}
 						}
 						if(quantidade == 1){
-							acertos ++
-							
-						} else{ acertos = quantidade + acertos}
-
+							acertos ++	
+						} 
+							else{ acertos = quantidade + acertos
+							}
 						if (acertos == palavraSecreta.length){
-							
 							winner ()
-							resultado = "VENCEU!!!"
-							
+							resultado = "VENCEU!!!"	
 						}
-					
-					console.log(letras, acertos, palavraSecreta.length)
 			return teclaAcionada;
 		}
 			else if(alphabet.includes(teclaAcionada)){
@@ -140,14 +125,12 @@ function teclaClicada(e){
 					adcionarletraIncorreta(teclaAcionada);
 					escreverLetraIncorreta(teclaAcionada, erros);				
 			}
-
 }
 
 function verificaFimDeJogo(){
 	if (resultado != ""){
 		document.onkeydown = 'none';
 		teclaAcionada = ""
-		
 		alert("FIM DE JOGO VOCÊ")
 		alert(resultado)
 	}

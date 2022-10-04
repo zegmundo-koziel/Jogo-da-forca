@@ -67,7 +67,6 @@ function escreverLetraIncorreta(teclaAcionada, erros){
     }
 
 	function desenhaBracoD(){
-		//DESENHA BREÇO ESQUERDO
        	tabuleiro.moveTo(750,90);
        	tabuleiro.lineTo(720,110);
       	tabuleiro.stroke();
@@ -96,8 +95,7 @@ function escreverLetraIncorreta(teclaAcionada, erros){
 	    tabuleiro.stroke();
 	}
 
-	function cabecaEnforcada(){
-		
+	function cabecaEnforcada(){	
 		tabuleiro.strokeStyle = "#f3f5fc";
         tabuleiro.beginPath();
 		tabuleiro.lineWidth = 8;
